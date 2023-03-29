@@ -1,0 +1,20 @@
+package src.main.java;
+
+public class CommandLineOutput {
+    public static void main(String[] args) {
+        String myString = "Hello, Java! It's a Java Basic course";
+        // длина этой строки
+        int stringLength = myString.length();
+        // символ '!' (без одинарных кавычек)
+        int exclamationIndex = myString.indexOf("!");
+        //"It's a Java" (без двойных кавычек)
+        String substring1 = myString.substring(13, 24);
+        //"Java Basic course" (без двойных кавычек)
+
+        String substring2 = myString.substring(20);
+        System.out.println("1. Length of the string: " + stringLength);
+        System.out.println("2. Symbol - " + myString.charAt(exclamationIndex));
+        System.out.println("3. " + substring1);
+        System.out.println("4. " + substring2);
+    }
+}
