@@ -1,0 +1,21 @@
+package src.main.java;
+
+import java.util.Scanner;
+
+public class TernaryConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите целое число: ");
+        int number = scanner.nextInt();
+
+        StringBuilder sb = new StringBuilder();
+        do {
+            int remainder = number % 3;
+            sb.append(remainder);
+            number /= 3;
+        } while (number > 0);
+
+        String ternary = sb.reverse().toString();
+        System.out.println("Результат: " + ternary);
+    }
+}
