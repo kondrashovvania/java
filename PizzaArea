@@ -1,0 +1,13 @@
+public class PizzaArea {
+    public static double calculateArea(double diameterCm) {
+        double radiusCm = diameterCm / 2.0;
+        double areaCm2 = Math.PI * radiusCm * radiusCm;
+        return areaCm2;
+    }
+
+    public static void main(String[] args) {
+        double diameterCm = 10.0; // Пример диаметра пиццы
+        double areaCm2 = calculateArea(diameterCm);
+        System.out.println("Пицца диаметром " + diameterCm + " cm имеет площадь " + areaCm2 + " cm^2.");
+    }
+}
