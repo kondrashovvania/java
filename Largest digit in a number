@@ -1,0 +1,22 @@
+import java.util.Random;
+
+public class LargestDigit {
+    public static void main(String[] args) {
+        Random random = new Random();
+
+        // генерируем рандомное число (трехзначное)
+        int number = random.nextInt(900) + 100;
+        System.out.println("Рандомное трехзначное число: " + number);
+
+        // поиск наибольшей цифры в этом числе
+        int maxDigit = 0;
+        while (number > 0) {
+            int digit = number % 10;
+            if (digit > maxDigit) {
+                maxDigit = digit;
+            }
+            number /= 10;
+        }
+        System.out.println("Наибольшая цифра: " + maxDigit);
+    }
+}
