@@ -1,0 +1,14 @@
+public class ValidationOfValues {
+    public static void main(String[] args) {
+        double Temperature1 = 101.0;
+        double Temperature2 = 99.0;
+        boolean DeviceWorking;
+        if (checkDevice(Temperature1, Temperature2)) DeviceWorking = true;
+        else DeviceWorking = false;
+        System.out.println("The device works correctly: " + DeviceWorking);
+    }
+
+    public static boolean checkDevice(double Temperature1, double Temperature2) {
+        return (Temperature1 > 100) && (Temperature2 < 100);
+    }
+}
