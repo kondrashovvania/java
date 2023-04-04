@@ -1,0 +1,12 @@
+public class ConverterTemperature {
+    public static void main(String[] args) {
+        double celsius = 35.0;
+        // переводим в кельвины 
+        double kelvin = Converter.celsiusToKelvin(celsius);
+        // переводим в фаренгейты
+        double fahrenheit = Converter.celsiusToFahrenheit(celsius);
+        System.out.println("Temp in degrees Celsius: " + celsius);
+        System.out.println("Temp in Kelvin: " + kelvin);
+        System.out.println("Temp in Fahrenheit: " + fahrenheit);
+    }
+}
