@@ -1,0 +1,20 @@
+public class SwapValues {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        int temp;
+
+        System.out.println("Изначальные значения:");
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+
+        // Меняем местами значения через временную переменную
+        temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println("Результат:");
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+}
