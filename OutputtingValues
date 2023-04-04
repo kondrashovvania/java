@@ -1,0 +1,15 @@
+public class OutputtingValues {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        int n = rand.nextInt(28801); // генерируем рандомное число
+        System.out.println("Осталось " + n + " секунд");
+
+        int hours = n / 3600; // делим "секунды" (n) на 3600, чтобы получить количество полных часов
+        if (hours >= 1) {
+            System.out.println("Осталось " + hours + " (час/часа/часов)");
+        } else {
+            System.out.println("Осталось менее часа");
+
+        }
+    }
+}
