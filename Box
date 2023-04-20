@@ -1,0 +1,33 @@
+public class Box {
+    double height;
+    double length;
+    double width;
+
+    public Box(double height, double length, double width) {
+        this.height = height;
+        this.length = length;
+        this.width = width;
+        System.out.println("Объём коробки 1 равен " + height * length * width);
+    }
+
+    public Box(double height, double length) {
+        this.height = height;
+        this.length = length;
+        this.width = 10;
+        System.out.println("Объём коробки 2 равен " + height * length * width);
+    }
+
+    public Box(double height) {
+        this.height = height;
+        this.length = 10;
+        this.width = 10;
+        System.out.println("Объём коробки 3 равен " + height * length * width);
+    }
+
+    public Box() {
+        this.height = 10;
+        this.length = 10;
+        this.width = 10;
+        System.out.println("Объём коробки 4 равен " + height * length * width);
+    }
+}
