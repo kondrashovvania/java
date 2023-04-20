@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class CoffeeMachine {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Выберите напиток: 1 - эспрессо, 2 - американо, 3 - капучино, 4 - обычная вода");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.println("Ваш эспрессо готов");
+                break;
+            case 2:
+                System.out.println("Ваш американо готов");
+                break;
+            case 3:
+                System.out.println("Ваш капучино готов");
+                break;
+            case 4:
+                System.out.println("Ваша вода готова");
+                break;
+            default:
+                System.out.println("Выберите пожалуйста правильный номер напитка");
+        }
+    }
+}
