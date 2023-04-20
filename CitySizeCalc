@@ -1,0 +1,33 @@
+public class CitySizeCalc {
+
+    public static String getCitySize(int population, String countryName) {
+        switch (countryName) {
+            case "Германия":
+                if (population < 100_000) {
+                    return "маленький";
+                } else if (population < 400_000) {
+                    return "средний";
+                } else {
+                    return "большой";
+                }
+            case "Франция":
+                if (population < 200_000) {
+                    return "маленький";
+                } else if (population < 500_000) {
+                    return "средний";
+                } else {
+                    return "большой";
+                }
+            default: // Другая страна, кроме Германии/Франции
+                return "неизвестно";
+        }
+    }
+
+
+    public static void main(String[] args) {
+        int population = 510_000;
+        String countryName = "Франция";
+        String citySize = getCitySize(population, countryName);
+        System.out.println("Город с населением " + population + " в стране " + countryName + " является " + citySize);
+    }
+}
