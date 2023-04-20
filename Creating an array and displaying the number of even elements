@@ -1,0 +1,20 @@
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] array = new int[15]; // создаем массив из 15-ти элементов
+        int evenCount = 0; // счетчик четных элементов этого массива
+
+        Random random = new Random(); // генерируем случайные числа
+
+        // заполняем массив случайными числами из отрезка [0;9]
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(10);
+            if (array[i] % 2 == 0) {
+                evenCount++;
+            }
+        }
+
+        System.out.println("Количество четных элементов в массиве: " + evenCount);
+    }
+}
