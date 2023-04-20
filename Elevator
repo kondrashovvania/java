@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Elevator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите высоту здания: ");
+        int height = scanner.nextInt();
+
+        System.out.print("Введите количество этажей, на которое поднимается лифт: ");
+        int up = scanner.nextInt();
+
+        System.out.print("Введите количество этажей, на которое опускается лифт: ");
+        int down = scanner.nextInt();
+
+        int floorsLeft = height - up; // сколько осталось этажей до конца при первом подъеме
+        int move = up - down; // количество этажей, на которое двигается лифт за каждое движение
+
+        int moves = floorsLeft / move; // количество подъемов, которое нужно сделать, чтобы добраться до последнего этажа
+
+        // если остаток от деления floorsLeft на move не равен нулю, значит, лифт не доедет до конца и нужен дополнительный подъем
+        if (floorsLeft % move != 0) {
+            moves++;
+        }
+
+        System.out.println("Количество подъемов, которые понадобятся лифту: " + moves);
+    }
+}
