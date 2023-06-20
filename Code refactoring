@@ -1,0 +1,126 @@
+import java.util.*;
+
+public class Deal {
+    private static final int CARDS_FOR_PLAYER = 5;
+
+    private static int getNumberOfPlayers(Scanner scanner) {
+        while (true) {
+            System.out.println("Введите количество игроков:");
+
+            if (scanner.hasNextInt()) {
+                int players = scanner.nextInt();
+                if (players > 0) {
+                    return players;
+                } else if (players == 0) {
+                    System.out.println("Игра завершена.");
+                    return 0;
+                } else {
+                    System.out.println("Количество игроков не может быть отрицательным.");
+                }
+            } else {
+                System.out.println("Вы ввели неправильное значение. Попробуйте снова.");
+                scanner.next(); // Очистка некорректного ввода
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        Rank[] ranks = Rank.values();
+        Suit[] suits = Suit.values();
+
+        int numberOfCards = suits.length * ranks.length; // Количество карт
+
+        int players = getNumberOfPlayers(scanner);
+        if (players == 0) {
+            return;
+        }
+
+        Deck deck = new Deck(ranks, suits);
+        deck.shuffle();
+
+        for (int i = 0; i < players * CARDS_FOR_PLAYER; i++) {
+            System.out.println(deck.dealCard());
+
+            if (i % CARDS_FOR_PLAYER == CARDS_FOR_PLAYER - 1) {
+                System.out.println();
+            }
+        }
+
+        scanner.close();
+    }
+}
+
+class Deck {
+    private List<Card> cards;
+    private Random random;
+
+    public Deck(Rank[] ranks, Suit[] suits) {
+        cards = new ArrayList<>();
+        random = new Random();
+
+        for (Rank rank : ranks) {
+            for (Suit suit : suits) {
+                cards.add(new Card(rank, suit));
+            }
+        }
+    }
+
+    public void shuffle() {
+        for (int i = cards.size() - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1);
+            Card temp = cards.get(i);
+            cards.set(i, cards.get(j));
+            cards.set(j, temp);
+        }
+    }
+
+    public Card dealCard() {
+        return cards.remove(0);
+    }
+}
+
+enum Rank {
+    TWO("2"), THREE("3"), FOUR("4"), FIVE("5"), SIX("6"), SEVEN("7"),
+    EIGHT("8"), NINE("9"), TEN("10"), JACK("Jack"), QUEEN("Queen"), KING("King"), ACE("Ace");
+
+    private final String displayName;
+
+    Rank(String displayName) {
+        this.displayName = displayName;
+    }
+
+    @Override
+    public String toString() {
+        return displayName;
+    }
+}
+
+enum Suit {
+    CLUBS("clubs"), DIAMONDS("diamonds"), HEARTS("hearts"), SPADES("spades");
+
+    private final String displayName;
+
+    Suit(String displayName) {
+        this.displayName = displayName;
+    }
+
+    @Override
+    public String toString() {
+        return displayName;
+    }
+}
+
+class Card {
+    private Rank rank;
+    private Suit suit;
+
+    public Card(Rank rank, Suit suit) {
+        this.rank = rank;
+        this.suit = suit;
+    }
+
+    @Override
+    public String toString() {
+        return rank + " " + suit;
