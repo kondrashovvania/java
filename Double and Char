@@ -1,0 +1,33 @@
+// Класс для типа double:
+public class DoubleValue {
+    private double value;
+
+    public DoubleValue(double value) {
+        this.value = value;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
+    }
+}
+
+// Класс для типа char:
+public class CharValue {
+    private char value;
+
+    public CharValue(char value) {
+        this.value = value;
+    }
+
+    public char getValue() {
+        return value;
+    }
+
+    public void setValue(char value) {
+        this.value = value;
+    }
+}
