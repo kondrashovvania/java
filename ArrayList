@@ -1,0 +1,29 @@
+public class ArrayList {
+    public static void main(String[] args) {
+        // Создание объекта ArrayList для хранения элементов типа String
+        java.util.ArrayList<String> list = new java.util.ArrayList<>();
+
+        // 2.1) Вставка 5 элементов в ArrayList
+        list.add("Элемент 1");
+        list.add("Элемент 2");
+        list.add("Элемент 3");
+        list.add("Элемент 4");
+        list.add("Элемент 5");
+
+        // 2.2) Удаление 4 элементов из ArrayList
+        list.remove(4);
+        list.remove(3);
+        list.remove(2);
+        list.remove(1);
+
+        // 2.3) Вставка 3 элементов и поиск одного из элементов
+        list.add("Новый элемент 1");
+        list.add("Новый элемент 2");
+        list.add("Новый элемент 3");
+
+        // Поиск элемента и его вывод на консоль
+        if (list.contains("Новый элемент 3")) {
+            System.out.println("Найден элемент: Новый элемент 3");
+        }
+    }
+}
